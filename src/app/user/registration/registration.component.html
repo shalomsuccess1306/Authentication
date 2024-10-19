@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-4 text-success h3">Sign up</div>
+    <div class="mb-3">
+        <input type="text" formControlName="fullName" placeholder="Enter Full Name" class="form-control bg-body-secondary">
+    </div>
+    <div class="error-message mb-3" *ngIf="form.controls.fullName.errors && form.controls.fullName.touched"> Enter Your Name</div>
+    <div class="mb-3">
+        <input type="email" formControlName="email" placeholder="Enter email" class="form-control bg-body-secondary">
+    </div>
+    <div class="error-message mb-3" *ngIf="form.controls.email.errors && form.controls.email.touched"> Enter a valid Email Address</div>
+    <div class="mb-3">
+        <input type="password" formControlName="password" placeholder="Enter password" class="form-control bg-body-secondary">
+    </div>
+    <div class="error-message mb-3" *ngIf="form.controls.password.errors && form.controls.password.touched"> Enter password</div>
+    <div class="mb-3">
+        <input type="password" formControlName="confirmPassword" placeholder="Enter password" class="form-control bg-body-secondary" >
+    </div>
+    <div class="error-message mb-3" *ngIf="form.controls.confirmPassword.status == 'INVALID'"> Password MisMatch</div>
+    <div class="mt-4">
+        <button class="btn btn-success w-100 rounded-4">Register</button>
+    </div>
+</form>
